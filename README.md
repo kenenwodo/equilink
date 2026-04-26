@@ -24,7 +24,7 @@ SMS  ─►  parse  ─►  country / language detect  ─►  ISCO-08 skills ma
 
 ---
 
-## ▶️ Reproduce the submitted demo (the exact command used in the video)
+## Reproduce the submitted demo (the exact command used in the video)
 
 The demo video was recorded with **live Google Jobs (SerpApi) +
 local Gemma 3 rerank** enabled. To reproduce that exact run:
@@ -148,7 +148,7 @@ ollama pull gemma3:4b
 LLM_RERANK_ENABLED=1 DEMO_MODE=1 python app.py
 ```
 
-Tested on a 16 GB MacBook and a $400 mini-PC. Per-(candidate, job)
+Tested on a MacBook Pro 16-inch 2019 (Intel)
 results are cached on disk in `data/llm_cache/`, so reruns are free.
 
 ---
@@ -209,6 +209,8 @@ candidates so you can run a full end-to-end flow without typing:
 | `patrick`   | CD      | FR       | Wheelchair user        | BSc Informatique      |
 | `marie`     | CM      | FR       | Hearing impairment     | BTS                   |
 | `jeanpaul`  | CD      | FR       | Mobility impairment    | Diplôme professionnel |
+
+NG - Nigeria, CD - Democratic Republic of Congo, CM - Cameroon
 
 ---
 
