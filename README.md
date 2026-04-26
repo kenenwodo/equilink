@@ -87,7 +87,7 @@ python demo.py
 
 ---
 
-## Optional: enable the local LLM rerank
+## Optional: enable the local LLM rerank (WHAT I RAN IN THE DEMO VIDEO)
 
 EquiLink uses a **local** large language model to rerank the top-N
 job matches and explain each fit in the candidate's own language.
