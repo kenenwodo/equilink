@@ -1,0 +1,12 @@
+# Python 3.6.8 compatible pinned versions
+Flask==1.1.4
+Jinja2==2.11.3
+itsdangerous==1.1.0
+Werkzeug==1.0.1
+MarkupSafe==1.1.1
+python-dotenv==0.20.0
+requests==2.27.1
+PyYAML==5.4.1
+# Optional SMS providers (install only the one you use)
+africastalking==1.2.5 ; python_version >= "3.6"
+twilio==7.16.5 ; python_version >= "3.6"

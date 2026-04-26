@@ -1,0 +1,18 @@
+# Requirements for the Python 3.11 conda env (`hacknation5-env2`).
+#
+#   conda create --name hacknation5-env2 python=3.11
+#   conda activate hacknation5-env2
+#   pip install -r requirements-py311.txt
+#
+# Use this env when you want LLM rerank (local Gemma via Ollama).
+# The original requirements.txt still works on the legacy 3.6.8 env.
+#
+# The LLM runs locally via Ollama (no API key). Install separately:
+#   1) Install Ollama:        https://ollama.com
+#   2) Pull the model:        ollama pull gemma3:4b
+
+Flask>=2.2,<3.0
+PyYAML>=6.0
+requests>=2.28
+python-dotenv>=1.0
+ollama>=0.3

@@ -1,0 +1,65 @@
+# DR Congo country configuration
+country_code: CD
+country_name: République Démocratique du Congo
+phone_prefix: "+243"
+country_aliases: ["rdc", "dr congo", "democratic republic of the congo", "democratic republic of congo", "congo-kinshasa", "drc", "cd"]
+default_language: fr
+supported_languages: [fr, en]
+currency: CDF
+currency_symbol: "FC"
+
+# National disability registry (placeholder — replace with the local body name).
+registry_name_en: "National Disability Registry"
+registry_name_fr: "Registre national des personnes handicapées"
+
+education_crosswalk:
+  - {match: ["primaire", "ep"],                                 isced: 1, label: "Primaire"}
+  - {match: ["cycle d'orientation", "tronc commun"],            isced: 2, label: "Premier cycle secondaire"}
+  - {match: ["diplome d'etat", "diplôme d'état", "humanites", "humanités"], isced: 3, label: "Second cycle secondaire"}
+  - {match: ["graduat", "g3"],                                  isced: 5, label: "Graduat"}
+  - {match: ["licence", "b.sc", "bachelor"],                    isced: 6, label: "Licence"}
+  - {match: ["master", "dea", "m.sc"],                          isced: 7, label: "Master / DEA"}
+  - {match: ["doctorat", "phd"],                                isced: 8, label: "Doctorat"}
+  - {match: ["apprenti", "informel"],                           isced: 4, label: "Post-secondaire non-tertiaire"}
+
+# Median monthly wage by ISCO-08 1-digit, CDF (≈USD x 2700).
+# Source: ILOSTAT 2022 + Banque Centrale du Congo bulletin 2023.
+median_wage_by_isco1:
+  "1": 2700000
+  "2": 1500000
+  "3": 950000
+  "4": 700000
+  "5": 450000
+  "6": 280000
+  "7": 600000
+  "8": 550000
+  "9": 250000
+minimum_wage_monthly: 248400   # SMIG 2023
+
+sector_growth_pct:
+  ICT:                   10.5
+  Financial_services:     5.2
+  Agriculture:            2.6
+  Construction:           4.8
+  Manufacturing:          3.0
+  Trade:                  2.2
+  Health:                 3.1
+  Education:              1.8
+  Transport_logistics:    4.4
+  Mining:                 7.9
+  Public_administration:  0.8
+
+returns_to_education_pct:
+  primary:    14.0
+  secondary:   9.8
+  tertiary:   19.5
+
+automation_multiplier: 0.45
+
+opportunity_types: [formal_employment, gig, self_employment, training_pathway]
+
+inclusion_keywords:
+  - "accessible"
+  - "handicap"
+  - "inclusif"
+  - "mobilité réduite"

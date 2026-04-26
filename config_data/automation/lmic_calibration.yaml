@@ -1,0 +1,37 @@
+# Adjacent / durable skills suggested when an occupation is high-risk.
+# Edge from high-risk -> resilient. Source mix: WEF Future of Jobs 2023,
+# OECD Skills Outlook 2023, Brookings AI Exposure 2023.
+
+high_risk_threshold: 0.60   # Frey-Osborne probability (post LMIC calibration)
+
+durable_skills_general:
+  - critical thinking
+  - complex problem solving
+  - interpersonal communication
+  - adaptability
+  - digital literacy
+  - data interpretation
+
+# Per-occupation pivot suggestions: high-risk -> 3 lower-risk adjacent ESCO occupations.
+adjacencies:
+  4110:  [3343, 3331, 4222]      # Office clerk -> admin secretary, logistics clerk, customer service
+  4131:  [3343, 2166, 4222]      # Data entry -> admin secretary, graphic designer, customer service
+  3343:  [3331, 4222, 2422]      # Admin secretary -> logistics clerk, customer service, policy analyst
+  3322:  [2433, 2434, 4222]      # Sales rep -> sales engineer, ICT sales, customer service
+  3331:  [3343, 4222, 2422]      # Logistics clerk -> admin secretary, customer service, policy analyst
+  2411:  [2422, 2643, 2434]      # Accountant -> policy analyst, translator, ICT sales (advisory)
+  5223:  [4222, 2434, 5311]      # Shop assistant -> customer service, ICT sales, childcare
+  6111:  [3132, 3133, 5311]      # Field farmer -> mech tech, chem tech, childcare
+  7212:  [3132, 7411, 7126]      # Welder -> mech tech, electrician, plumber
+  7222:  [3132, 2512, 2166]      # Toolmaker -> mech tech, software, graphic designer
+  7531:  [2166, 5311, 4222]      # Tailor -> graphic design, childcare, customer service
+  7532:  [7531, 2166, 4222]      # Garment cutter -> tailor, designer, customer service
+  8322:  [3331, 4222, 7231]      # Taxi driver -> logistics clerk, customer service, mechanic
+  8332:  [3331, 7231, 3132]      # Truck driver -> logistics, mechanic, mech tech
+  9112:  [5311, 5321, 9412]      # Cleaner -> childcare, healthcare aide, kitchen
+  9412:  [5311, 5223, 4222]      # Kitchen helper -> childcare, retail, customer service
+  3344:  [3343, 2221, 4222]      # Medical secretary -> admin secretary, nurse, customer service
+  4222:  [2434, 2422, 3343]      # CSR -> ICT sales, policy analyst, admin secretary
+  2643:  [2422, 2310, 2166]      # Translator -> policy analyst, lecturer, designer
+  7126:  [7411, 3132, 7212]      # Plumber -> electrician, mech tech, welder
+  7231:  [3132, 7411, 8332]      # Mechanic -> mech tech, electrician, truck driver

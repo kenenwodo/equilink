@@ -1,0 +1,78 @@
+# Nigeria country configuration
+# Sources cited inline so reviewers can audit. All numbers refreshed against
+# public 2023-2025 reports; replace with newer values without touching code.
+country_code: NG
+country_name: Nigeria
+phone_prefix: "+234"
+country_aliases: ["nigeria", "ng", "naija"]
+default_language: en        # en | fr
+supported_languages: [en]
+currency: NGN
+currency_symbol: "₦"
+
+# National disability registry name surfaced in candidate-facing UI.
+registry_name_en: "National Commission for Persons with Disabilities (NCPWD)"
+registry_name_fr: "Commission Nationale des Personnes Handicapées (NCPWD)"
+
+# Education taxonomy crosswalk -> ISCED 2011 levels (UNESCO)
+# Free-text on the left appears in candidates' SMS; we map to ISCED 0..8.
+education_crosswalk:
+  - {match: ["fslc", "first school leaving"],                     isced: 1, label: "Primary"}
+  - {match: ["jss", "junior secondary", "bece"],                  isced: 2, label: "Lower secondary"}
+  - {match: ["waec", "ssce", "neco", "secondary school diploma"], isced: 3, label: "Upper secondary"}
+  - {match: ["ond", "nce"],                                       isced: 5, label: "Short-cycle tertiary"}
+  - {match: ["hnd", "b.sc", "bsc", "b.eng", "b.a", "ba", "bachelor", "degree"], isced: 6, label: "Bachelor's"}
+  - {match: ["m.sc", "msc", "ma", "mba", "master"],               isced: 7, label: "Master's"}
+  - {match: ["phd", "doctorate"],                                 isced: 8, label: "Doctoral"}
+  - {match: ["apprentice", "informal", "trade test"],             isced: 4, label: "Post-secondary non-tertiary"}
+
+# Median monthly wage by ISCO-08 1-digit major group, NGN.
+# Source: NBS Labour Force Survey Q4 2023 + Jobberman 2024 salary report.
+median_wage_by_isco1:
+  "1": 750000   # Managers
+  "2": 420000   # Professionals
+  "3": 280000   # Technicians
+  "4": 180000   # Clerical
+  "5": 130000   # Services & sales
+  "6": 95000    # Skilled agriculture
+  "7": 160000   # Craft & related trades
+  "8": 150000   # Plant & machine operators
+  "9": 90000    # Elementary
+minimum_wage_monthly: 70000   # Federal minimum wage, 2024
+
+# Sector employment growth (% YoY). Source: NBS Q4 2023 + AfDB AEO 2024.
+sector_growth_pct:
+  ICT:                    14.2
+  Financial_services:      6.1
+  Agriculture:             1.8
+  Construction:            3.4
+  Manufacturing:           2.1
+  Trade:                   2.7
+  Health:                  4.0
+  Education:               2.9
+  Transport_logistics:     5.6
+  Public_administration:   1.2
+
+# Private returns to education (% per additional year).
+# Source: Psacharopoulos & Patrinos 2018 (Sub-Saharan Africa averages, NG aligned).
+returns_to_education_pct:
+  primary:    13.4
+  secondary:  10.6
+  tertiary:   21.0
+
+# Automation calibration multiplier applied to base Frey-Osborne probability.
+# Rationale: lower capital stock + lower wages dampen near-term automation
+# adoption in LMICs; World Bank STEP 2017 + Cirera-Maloney 2017.
+automation_multiplier: 0.65
+
+# Opportunity types we surface to candidates in this country.
+opportunity_types: [formal_employment, gig, self_employment, training_pathway]
+
+# Disability inclusion: keywords that mark a posting as actively inclusive.
+inclusion_keywords:
+  - "accessible"
+  - "wheelchair"
+  - "screen-reader"
+  - "inclusive hiring"
+  - "reasonable accommodation"
+  - "disability friendly"

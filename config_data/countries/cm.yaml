@@ -1,0 +1,66 @@
+# Cameroon country configuration
+country_code: CM
+country_name: Cameroun
+phone_prefix: "+237"
+country_aliases: ["cameroun", "cameroon", "cm"]
+default_language: fr
+supported_languages: [fr, en]
+currency: XAF
+currency_symbol: "FCFA"
+
+# National disability registry (placeholder — replace with the local body name).
+registry_name_en: "National Disability Registry"
+registry_name_fr: "Registre national des personnes handicapées"
+
+education_crosswalk:
+  - {match: ["cep", "primaire"],                                isced: 1, label: "Primaire"}
+  - {match: ["bepc", "college", "collège"],                     isced: 2, label: "Premier cycle secondaire"}
+  - {match: ["probatoire", "gce o level", "o-level"],           isced: 3, label: "Second cycle secondaire"}
+  - {match: ["baccalaureat", "baccalauréat", "bac", "gce a level", "a-level"], isced: 3, label: "Baccalauréat"}
+  - {match: ["bts", "dut", "deug"],                             isced: 5, label: "Court cycle tertiaire"}
+  - {match: ["licence", "b.sc", "bsc", "ba", "bachelor"],       isced: 6, label: "Licence"}
+  - {match: ["master", "m.sc", "msc", "maitrise", "maîtrise"],  isced: 7, label: "Master"}
+  - {match: ["doctorat", "phd"],                                isced: 8, label: "Doctorat"}
+  - {match: ["apprenti", "apprentissage", "informel"],          isced: 4, label: "Post-secondaire non-tertiaire"}
+
+# Median monthly wage by ISCO-08 1-digit, XAF.
+# Source: ILOSTAT 2023 + INS Cameroun ECAM4 (rebased).
+median_wage_by_isco1:
+  "1": 650000
+  "2": 380000
+  "3": 220000
+  "4": 165000
+  "5": 110000
+  "6": 70000
+  "7": 140000
+  "8": 130000
+  "9": 60000
+minimum_wage_monthly: 41875   # SMIG, decree 2023
+
+sector_growth_pct:
+  ICT:                    9.8
+  Financial_services:     4.6
+  Agriculture:            3.1
+  Construction:           4.2
+  Manufacturing:          2.8
+  Trade:                  2.5
+  Health:                 3.6
+  Education:              2.4
+  Transport_logistics:    3.9
+  Public_administration:  1.0
+
+returns_to_education_pct:
+  primary:    11.5
+  secondary:  10.2
+  tertiary:   18.7
+
+automation_multiplier: 0.55
+
+opportunity_types: [formal_employment, gig, self_employment, training_pathway]
+
+inclusion_keywords:
+  - "accessible"
+  - "mobilité réduite"
+  - "handicap"
+  - "inclusif"
+  - "aménagement raisonnable"

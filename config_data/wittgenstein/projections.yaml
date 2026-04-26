@@ -1,0 +1,54 @@
+# Wittgenstein Centre 2025-2035 education projections (selected indicators).
+# Source: https://dataexplorer.wittgensteincentre.org/  (SSP2 scenario)
+# We only need a few projections to *contextualize* shifts. Replace freely.
+
+# Share of working-age population (25-64) by highest education attained, %.
+# (Approx values; replace with exact pull from Wittgenstein dataexplorer)
+
+NG:
+  year_2025:
+    no_education:        20.5
+    primary:             16.8
+    lower_secondary:     21.2
+    upper_secondary:     27.4
+    post_secondary:      14.1
+  year_2035:
+    no_education:        14.0
+    primary:             14.6
+    lower_secondary:     21.7
+    upper_secondary:     30.5
+    post_secondary:      19.2
+  shift_summary_en: "Nigeria 2025->2035: post-secondary share rises from 14% to 19% — competition for entry-level grad jobs intensifies. Lower-secondary remains the modal level."
+  shift_summary_fr: "Nigéria 2025->2035 : la part post-secondaire passe de 14% à 19% — la compétition pour les emplois universitaires d'entrée s'intensifie."
+
+CM:
+  year_2025:
+    no_education:        18.0
+    primary:             27.5
+    lower_secondary:     22.0
+    upper_secondary:     21.0
+    post_secondary:      11.5
+  year_2035:
+    no_education:        12.5
+    primary:             24.0
+    lower_secondary:     23.5
+    upper_secondary:     24.0
+    post_secondary:      16.0
+  shift_summary_en: "Cameroon 2025->2035: upper-secondary and post-secondary expand together; primary still dominant. Trades and technician roles will absorb most growth."
+  shift_summary_fr: "Cameroun 2025->2035 : le secondaire supérieur et le post-secondaire progressent ensemble ; le primaire reste dominant. Métiers techniques absorberont la croissance."
+
+CD:
+  year_2025:
+    no_education:        15.6
+    primary:             32.0
+    lower_secondary:     22.4
+    upper_secondary:     19.0
+    post_secondary:       11.0
+  year_2035:
+    no_education:        10.2
+    primary:             29.0
+    lower_secondary:     23.5
+    upper_secondary:     22.0
+    post_secondary:      15.3
+  shift_summary_en: "DR Congo 2025->2035: largest gains at upper-secondary and post-secondary; mining and logistics remain the highest-growth absorbers."
+  shift_summary_fr: "RDC 2025->2035 : plus forte hausse au secondaire supérieur et post-secondaire ; mines et logistique restent les plus gros employeurs."

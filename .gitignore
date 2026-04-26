@@ -1,0 +1,41 @@
+# --- Secrets & local config ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+hacknation5/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Runtime data (don't ship PII or caches) ---
+data/outbox/
+data/llm_cache/
+data/serpapi_cache/
+data/candidates.csv
+data/applications_log.csv
+!data/candidates.csv.sample
+
+# --- Build / dist ---
+*.egg-info/
+build/
+dist/
+
+# --- Logs ---
+*.log
+
+# --- Archived ---
+README.old.md
