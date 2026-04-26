@@ -1,9 +1,11 @@
 # EquiLink
 
+*By **Kenechukwu Nwodo**.*
+
 > **EquiLink — tackling the UNMAPPED challenge by World Bank.**
 > A multilingual, SMS-first job-matching service for people with
-> disabilities across Africa. Submitted to **HackNation #5 ·
-> *UNMAPPED Africa* (World Bank)**.
+> disabilities across Africa. Submitted to HackNation April 25-26
+> 2026, UNMAPPED challenge by the World Bank.
 
 EquiLink lets a candidate send a single SMS from any phone — no
 smartphone, no data plan, no CV — and get back a ranked, accommodation-
@@ -19,6 +21,49 @@ SMS  ─►  parse  ─►  country / language detect  ─►  ISCO-08 skills ma
         ─►  block / caution / boost filter  ─►  ranked SMS  +  employer
             email  +  policymaker dashboard
 ```
+
+---
+
+## ▶️ Reproduce the submitted demo (the exact command used in the video)
+
+The demo video was recorded with **live Google Jobs (SerpApi) +
+local Gemma 3 rerank** enabled. To reproduce that exact run:
+
+```bash
+LLM_RERANK_ENABLED=1 DEMO_MODE=1 python app.py
+```
+
+Three things have to be true for that command to behave like the video:
+
+1. **Ollama is running with `gemma3:4b` pulled.** Install Ollama
+   from <https://ollama.com>, then:
+   ```bash
+   ollama pull gemma3:4b
+   ollama serve            # leave running in another terminal
+   ```
+2. **A SerpApi key is set in `.env`** (free tier — 50 searches/month
+   at <https://serpapi.com/>):
+   ```bash
+   cp .env.example .env       # if you haven't already
+   # then edit .env and set:
+   #   SERPAPI_API_KEY=<your-key-here>
+   #   SERPAPI_ENABLED=1
+   #   SERPAPI_MAX_CALLS_PER_DAY=20
+   ```
+3. **Dependencies are installed** (see [Quick start](#quick-start-5-minutes-fully-offline)
+   below for the venv steps).
+
+With all three in place, run the command and open
+<http://localhost:6034>. Click any of the demo personas
+(`?preset=adaeze`, `?preset=patrick`, `?preset=marie`,
+`?preset=jeanpaul`) to walk through the same end-to-end flow shown
+in the video.
+
+> `DEMO_MODE=1` keeps SMS / email *simulated* — every outbound
+> message is written as JSON to `data/outbox/` so reviewers can
+> inspect the full conversation. Set `DEMO_MODE=0` only when you
+> have real SMS + SMTP credentials configured (see
+> [real SMS / email](#optional-enable-real-sms--email)).
 
 ---
 
@@ -87,7 +132,7 @@ python demo.py
 
 ---
 
-## Optional: enable the local LLM rerank (WHAT I RAN IN THE DEMO VIDEO)
+## Optional: enable the local LLM rerank
 
 EquiLink uses a **local** large language model to rerank the top-N
 job matches and explain each fit in the candidate's own language.
